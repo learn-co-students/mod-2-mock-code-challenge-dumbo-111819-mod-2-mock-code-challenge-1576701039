@@ -1,0 +1,19 @@
+<h1>Add a New Camper:</h1>
+<%= form_for @camper do |f| %>
+<%= f.label 'Name' %><br>
+<%= f.text_field :name %><br>
+
+<%= f.label 'Age' %><br>
+<%= f.number_field :age %><br>
+
+<%= f.submit 'Submit Camper' %>
+<% end %>
+
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+<br>
+<%= button_to "Back to All Campers", campers_path, method: :get %>

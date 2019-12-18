@@ -2,6 +2,10 @@
 
 <ul>
   <% @campers.each do |camper| %>
-    <li><%= camper.name %></li>
+    <li><%= link_to camper.name, camper_path(camper) %></li>
   <% end %>
 </ul>
+
+<%= link_to 'Sign up a new camper', new_camper_path %><br><br>
+
+<%= button_to 'View All Activities', activities_path, method: :get %>

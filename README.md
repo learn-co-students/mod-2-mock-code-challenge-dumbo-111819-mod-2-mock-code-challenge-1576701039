@@ -21,3 +21,39 @@ Currently, we don't have any way to associate the two, so consider the relations
 ### Hints / Tips
 
 + Remember we want to be RESTful. What URL should show info about a particular camper? What URL should show a form to create a signup? What controller actions are associated?  
+
+Camper -< Signup >- Activity
+
+[x] - Camper
+  [x] - has_many :signups
+  [x] - has_many :activities, through: signups
+  [x] - index page with all campers
+    [x] - link to each camper
+  [x] - show page for camper
+    [x] - name
+    [x] - age
+    [x] - list of activities
+  [x] - form to create new camper
+    [x] - with name and age
+
+[x] - Signup
+    [x] - has a time between 0 and 23
+    [x] - camper id
+    [x] - activity id
+  [x] - validates time 0 to 23
+  [x] - form
+    [x] - associates a camper with an activity
+    [x] - activity drop down
+    [x] - camper drop down
+    [x] - input a time
+    [x] - redirect to camper show page
+
+[x] - Activity
+  [x] - index page for all activities
+    [x] - link to each activity
+  [x] - show page
+    [x] - name and difficulty level
+  [x] - has_many :signups
+  [x] - has_many :campers, through: signups
+
+[x] - Please don't make the real challenge too much harder because I did extra deliverables lol. I just wanted more practice and didn't want to walk out too early.
