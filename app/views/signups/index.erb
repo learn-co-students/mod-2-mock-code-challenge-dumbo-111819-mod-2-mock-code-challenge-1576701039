@@ -1,1 +1,5 @@
 <h1>List of Signups</h1>
+
+<% @signups.each do |s| %>
+    <li><%= "#{s.camper.name} - #{s.activity.name}" %></li>
+  <% end %>
