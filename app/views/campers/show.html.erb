@@ -1,0 +1,10 @@
+<h1><%= @camper.name %>'s Page</h1>
+<h2>Age:<%= @camper.age %>'s Page</h2>
+<h2>Activities: <%= @camper.activities.each do |activity| %>'s Page</h2>
+   <%  if (activity.size == 0) %>
+            <%puts "N/A"%>
+    <% else %>
+         <li> <%= activity.name %> </li>
+    <%end%>
+
+<%end %>

@@ -1,7 +1,10 @@
+<%= link_to "View activities", activities_path %> || 
+<%= link_to "Signup Page", new_signup_path %>
+
 <h1>All The Campers</h1>
 
 <ul>
   <% @campers.each do |camper| %>
-    <li><%= camper.name %></li>
+    <li><%= link_to camper.name, camper_path(camper) %></li>
   <% end %>
 </ul>
