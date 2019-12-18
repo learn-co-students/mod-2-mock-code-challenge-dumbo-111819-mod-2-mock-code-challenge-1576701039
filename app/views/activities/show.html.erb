@@ -1,0 +1,10 @@
+<h1><%= @activity.name %></h1>
+<h3>Difficulty (on a scale of who knows how much): <%= @activity.difficulty %></h3>
+<h3>Campers Who Signed Up for <%= @activity.name %>:</h3>
+<% @activity.campers.each do |c| %>
+<p><%= link_to c.name, camper_path(c) %></p>
+<% end %>
+
+</ul>
+
+<%= button_to 'Back to All Activities', activities_path, method: :get %>

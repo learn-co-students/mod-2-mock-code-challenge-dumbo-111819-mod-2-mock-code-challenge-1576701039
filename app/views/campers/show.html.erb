@@ -1,0 +1,9 @@
+<h1><%= @camper.name %></h1>
+<h3>Age: <%= @camper.age %></h3>
+<h3>Activities:</h3>
+<% @camper.signups.each do |s| %>
+<p><%= link_to s.activity.name, activity_path(s.activity) %> at: <%= s.time %>:00</p> 
+<% end %>
+<%= link_to 'Sign up for an activity', new_signup_path %><br><br>
+
+<%= button_to 'Back to All Campers', campers_path, method: :get %>
